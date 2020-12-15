@@ -14,6 +14,7 @@ public class VacationDaysUtility {
 
         if (daysWorked < 0)
             throw new IllegalArgumentException("Days worked should be a positive number");
+
         if (daysWorkedCurrent + daysWorked <= EmployeeConstant.DAYS_IN_WORK_YEAR) {
             float vacationDayGenerated =  ((daysWorked / (float) EmployeeConstant.DAYS_IN_WORK_YEAR) * maxVacationDaysInWorkYear);
             vacationDaysAccumulated += vacationDayGenerated;
@@ -29,6 +30,7 @@ public class VacationDaysUtility {
 
     public void takeVacation(float vacationDays, Employee employee) {
         float vacationDaysAccumulated = employee.getVacationDaysAccumulated();
+
         if (vacationDays < 0)
             throw new IllegalArgumentException("Vacation days should be a positive number");
 

@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>Update vacation days for {{data.name}}</h1>
+
+    <mat-form-field>
+      <input matInput  [(ngModel)] = "data.vacationDays" type="number" placeholder="vacation days">
+    </mat-form-field>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="data">Update</button>
+</div>

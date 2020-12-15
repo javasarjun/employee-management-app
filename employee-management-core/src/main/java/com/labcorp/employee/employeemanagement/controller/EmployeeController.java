@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @Validated
+@CrossOrigin(origins = "http://localhost:4200")
 public class EmployeeController {
 	private static final Logger logger = LoggerFactory
 			.getLogger(EmployeeController.class);
@@ -39,6 +40,7 @@ public class EmployeeController {
 											  @PathVariable
 							  @Min(value = 0, message = "must be greater than or equal to 0")
 							  @Max(value = 260, message = "must be less than or equal to 260") int days)  {
+		logger.info("Received request: id : {} and days : {}", id, days);
 		return employeeService.setWorkDays(id, days);
 	}
 	
@@ -47,6 +49,7 @@ public class EmployeeController {
 	public @ResponseBody Employee setVacationDays(@PathVariable UUID id,
 								  @PathVariable @Min(value = 0, message = "must be greater than or equal to 0")
 										  float days) {
+		logger.info("Received request: id : {} and days : {}", id, days);
 		return employeeService.setVacationDays(id, days);
 	}
 
