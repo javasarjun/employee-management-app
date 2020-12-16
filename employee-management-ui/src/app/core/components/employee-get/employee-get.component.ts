@@ -82,7 +82,7 @@ export class EmployeeGetComponent implements OnInit {
     modalInput.id = employee.id;
     modalInput.name = employee.name;
     const takeVacationModalRef = this.dialog.open(TakeVacationComponent, {
-      width: '350px',
+      width: '500px',
       data: modalInput,
       disableClose: true,
       position: { top: '100' + 'px' },

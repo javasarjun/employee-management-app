@@ -24,7 +24,7 @@ describe('EmployeesService', () => {
   });
 
   describe(':', () => {
-    function setup() {
+    function setup(): any {
       const employeeService = TestBed.inject(EmployeesService);
       const httpTestingController = TestBed.inject(HttpTestingController);
       return { employeeService, httpTestingController };
